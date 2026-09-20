@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>疫苗接种记录查询 - 官方渠道与自助查询指南</title>
+    <meta name="description" content="提供全国及各省市疫苗接种记录查询官方入口、接种时间表、疫苗种类查询及健康档案管理服务，帮助用户快速获取权威疫苗接种证明。">
+    <meta name="keywords" content="疫苗接种记录查询,疫苗查询,健康宝,防疫健康码,疫苗接种证明,疫苗接种APP">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-hover: #0052a3;
+            --secondary-color: #f0f7ff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --text-extra: #999999;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* 查询卡片 */
+        .query-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.1);
+            max-width: 600px;
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .form-hint {
+            font-size: 12px;
+            color: var(--text-extra);
+            margin-top: 8px;
+            text-align: left;
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span.more {
+            font-size: 14px;
+            font-weight: normal;
+            color: var(--text-light);
+        }
+
+        /* 官方入口网格 */
+        .official-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .channel-card {
+            background: var(--bg-card);
+            border: 1px solid #e1e4e8;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .channel-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .channel-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .channel-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .channel-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .channel-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .channel-link::after {
+            content: '→';
+            margin-left: 4px;
+            transition: transform 0.2s;
+        }
+
+        .channel-card:hover .channel-link::after {
+            transform: translateX(4px);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            transform: rotate(45deg);
+            margin-right: 8px;
+            opacity: 0.6;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            padding-left: 14px;
+            line-height: 1.7;
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .query-card {
+                margin: -30px 16px 0;
+                padding: 24px;
+            }
+
+            .official-channels {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>健康档案查询网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">官方入口</a>
+                <a href="#">使用指南</a>
+                <a href="#">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>疫苗接种记录查询</h1>
+            <p>为您提供全国各省市的疫苗接种信息查询服务。支持电子健康码、预防接种证等多种查询方式，让您的健康数据一目了然。</p>
+            
+            <!-- 查询卡片 -->
+            <div class="query-card">
+                <form onsubmit="event.preventDefault(); alert('请在各省市官方平台进行查询，本页仅提供入口指引。');">
+                    <div class="form-group">
+                        <label for="region">选择查询地区</label>
+                        <select id="region" class="form-control">
+                            <option value="" disabled selected>请选择您所在的省份/直辖市</option>
+                            <option value="beijing">北京市</option>
+                            <option value="shanghai">上海市</option>
+                            <option value="guangdong">广东省</option>
+                            <option value="jiangsu">江苏省</option>
+                            <option value="zhejiang">浙江省</option>
+                            <option value="sichuan">四川省</option>
+                            <option value="hubei">湖北省</option>
+                            <option value="other">其他地区</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id-type">证件类型</label>
+                        <select id="id-type" class="form-control">
+                            <option value="idcard">居民身份证</option>
+                            <option value="social">社会保障卡</option>
+                            <option value="health">电子健康码</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id-number">证件号码</label>
+                        <input type="text" id="id-number" class="form-control" placeholder="请输入有效的身份证号码">
+                    </div>
+                    <button type="submit" class="btn-primary">查询我的接种记录</button>
+                    <p class="form-hint">提示：请确保输入的证件号码与您在疫苗接种时登记的信息一致。</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="container main-content">
+        
+        <!-- 官方渠道 -->
+        <section>
+            <div class="section-title">
+                全国官方查询渠道
+                <span class="more">点击查看详情</span>
+            </div>
+            <div class="official-channels">
+                <a href="#" class="channel-card">
+                    <div class="channel-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3>国家政务服务平台</h3>
+                    <p>国务院客户端小程序，提供跨省通办服务，支持全国疫苗接种记录查询。</p>
+                    <span class="channel-link">访问小程序</span>
+                </a>
+
+                <a href="#" class="channel-card">
+                    <div class="channel-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>健康宝 (北京)</h3>
+                    <p>北京市居民电子健康档案，记录所有疫苗接种信息及核酸检测结果。</p>
+                    <span class="channel-link">立即查询</span>
+                </a>
+
+                <a href="#" class="channel-card">
+                    <div class="channel-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <h3>粤省事 (广东)</h3>
+                    <p>广东省电子证照服务，包含预防接种证查询、查验及打印功能。</p>
+                    <span class="channel-link">进入粤省事</span>
+                </a>
+
+                <a href="#" class="channel-card">
+                    <div class="channel-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3>浙里办 (浙江)</h3>
+                    <p>浙江省民服务“一件事”集成改革，提供全生命周期健康档案管理。</p>
+                    <span class="channel-link">下载APP</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section>
+            <div class="section-title">
+                疫苗接种记录查询常见问题
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">查询不到接种记录怎么办？</div>
+                    <div class="faq-answer">请检查输入的身份证号码是否与接种时登记的号码一致。如果号码无误但无记录，可能是数据尚未同步，建议联系当地社区卫生服务中心或接种点进行人工补录。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何打印疫苗接种证明？</div>
+                    <div class="faq-answer">通过“健康宝”或“粤省事”等官方平台查询到记录后，通常点击“打印”或“下载PDF”按钮即可保存或打印。部分地区支持在接种点自助打印机上直接打印。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">儿童疫苗接种记录如何查询？</div>
+                    <div class="faq-answer">儿童通常使用父母身份证或社保卡进行关联查询。在查询时，请选择“儿童”身份，并输入监护人的有效证件号码，系统会自动关联儿童的预防接种档案。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">跨省流动后如何查询异地接种记录？</div>
+                    <div class="faq-answer">建议优先使用“国家政务服务平台”小程序，它支持跨省数据共享。如果该平台无法显示，建议携带纸质接种证前往现居住地接种点进行信息录入。</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #666; margin-bottom: 10px;">本站致力于为公众提供便捷的疫苗接种信息查询指引服务，帮助用户快速获取权威健康档案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">国家卫健委</a></li>
+                        <li><a href="#">疾病预防控制中心</a></li>
+                        <li><a href="#">疫苗安全监管</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>服务热线：12320</li>
+                        <li>电子邮箱：support@health-query.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 健康档案查询网. All Rights Reserved. 本站内容仅供参考，具体信息请以官方发布为准。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
