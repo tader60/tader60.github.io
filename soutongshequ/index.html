@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜同社区-探索与分享的同性情感与生活交流平台</title>
+    <meta name="description" content="搜同社区是一个专注于同性情感交流、生活分享与兴趣互动的在线平台。提供丰富的分类板块、热门话题讨论、私密交友指南及安全使用建议，致力于打造真实、友好的网络社群环境。">
+    <meta name="keywords" content="搜同社区,同性交友,同志社区,情感交流,生活分享,网络社群">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #457b9d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-light: #8d99ae;
+            --border-radius: 8px;
+            --spacing: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #d62839;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1d3557 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 24px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            color: var(--text-main);
+        }
+
+        .section-header a {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .section-header a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            background-color: #e9ecef;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #f1f3f5;
+            color: var(--text-light);
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .avatar-group {
+            display: flex;
+            margin-top: 12px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: -8px;
+            border: 2px solid white;
+        }
+
+        .avatar:first-child {
+            margin-left: 0;
+        }
+
+        /* Categories */
+        .category-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 12px;
+            transition: background 0.2s;
+        }
+
+        .category-item:hover {
+            background: #f1f3f5;
+        }
+
+        .cat-icon {
+            width: 40px;
+            height: 40px;
+            background: #e3f2fd;
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 16px;
+        }
+
+        .cat-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .cat-info p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .hot-list a {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .hot-list .rank {
+            color: var(--primary-color);
+            font-weight: bold;
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Safety Tips */
+        .tips-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .tips-box h3 {
+            font-size: 16px;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .tips-box p {
+            font-size: 13px;
+            color: #856404;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #a8dadc;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            color: #a8dadc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                搜同社区
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">同城交友</a>
+                <a href="#">兴趣小组</a>
+                <a href="#">情感树洞</a>
+                <a href="#">资源分享</a>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>发现真实的自己，连接相似的灵魂</h1>
+            <p>在搜同社区，我们致力于提供一个安全、真实、包容的线上空间。分享生活、探讨话题、寻找知己，让每一次相遇都充满意义。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索感兴趣的话题、用户或城市...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Safety Notice -->
+        <div class="tips-box">
+            <h3>⚠️ 网络安全温馨提示</h3>
+            <p>在参与网络社交时，请务必注意保护个人隐私。不要轻易透露真实姓名、家庭住址、工作单位及财务信息。遇到可疑链接或要求转账的情况，请保持警惕并及时举报。</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px;">
+            
+            <!-- Left Column -->
+            <div class="content-area">
+                
+                <!-- Categories -->
+                <section>
+                    <div class="section-header">
+                        <h2>热门分类</h2>
+                        <a href="#">查看更多 &rarr;</a>
+                    </div>
+                    <div class="grid-4">
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">💬</div>
+                            <div class="cat-info">
+                                <h3>情感交流</h3>
+                                <p>2.3万活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">📷</div>
+                            <div class="cat-info">
+                                <h3>生活分享</h3>
+                                <p>1.8万活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">🎮</div>
+                            <div class="cat-info">
+                                <h3>游戏竞技</h3>
+                                <p>9千活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">✈️</div>
+                            <div class="cat-info">
+                                <h3>同城活动</h3>
+                                <p>5千活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">📚</div>
+                            <div class="cat-info">
+                                <h3>书影音单</h3>
+                                <p>1.2万活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">🧳</div>
+                            <div class="cat-info">
+                                <h3>旅行攻略</h3>
+                                <p>7千活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">👗</div>
+                            <div class="cat-info">
+                                <h3>穿搭指南</h3>
+                                <p>1.1万活跃</p>
+                            </div>
+                        </a>
+                        <a href="#" class="category-item">
+                            <div class="cat-icon">💬</div>
+                            <div class="cat-info">
+                                <h3>匿名树洞</h3>
+                                <p>3万活跃</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Latest Discussions -->
+                <section>
+                    <div class="section-header">
+                        <h2>最新动态</h2>
+                        <a href="#">更多帖子 &rarr;</a>
+                    </div>
+                    <div class="grid-3">
+                        <!-- Post Card 1 -->
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/love1/400/250" alt="Post Cover" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">情感话题</span>
+                                <h3 class="card-title">如何处理异地恋中的信任危机？</h3>
+                                <div class="card-meta">
+                                    <span>3小时前</span>
+                                    <span>128 回复</span>
+                                </div>
+                                <div class="avatar-group">
+                                    <div class="avatar" style="background-image: url('https://picsum.photos/seed/u1/50/50'); background-size: cover;"></div>
+                                    <div class="avatar" style="background-image: url('https://picsum.photos/seed/u2/50/50'); background-size: cover;"></div>
+                                    <div class="avatar" style="background-image: url('https://picsum.photos/seed/u3/50/50'); background-size: cover;"></div>
+                                    <div style="font-size: 12px; color: #999; margin-left: 8px; line-height: 24px;">+124 人参与</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Post Card 2 -->
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/travel/400/250" alt="Post Cover" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">旅行分享</span>
+                                <h3 class="card-title">周末去成都玩，求推荐适合拍照的咖啡店</h3>
+                                <div class="card-meta">
+                                    <span>5小时前</span>
+                                    <span>56 回复</span>
+                                </div>
+                                <div class="avatar-group">
+                                    <div class="avatar" style="background-image: url('https://picsum.photos/seed/u4/50/50'); background-size: cover;"></div>
+                                    <div style="font-size: 12px; color: #999; margin-left: 8px; line-height: 24px;">+55 人参与</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Post Card 3 -->
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/game/400/250" alt="Post Cover" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">游戏</span>
+                                <h3 class="card-title">有没有人一起开黑《原神》？缺一个奶妈</h3>
+                                <div class="card-meta">
+                                    <span>8小时前</span>
+                                    <span>23 回复</span>
+                                </div>
+                                <div class="avatar-group">
+                                    <div class="avatar" style="background-image: url('https://picsum.photos/seed/u5/50/50'); background-size: cover;"></div>
+                                    <div style="font-size: 12px; color: #999; margin-left: 8px; line-height: 24px;">+22 人参与</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Recommended Topics -->
+                <section>
+                    <div class="section-header">
+                        <h2>精选专题</h2>
+                    </div>
+                    <div class="grid-3">
+                        <div class="card" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: 12px;">🏳️‍🌈</div>
+                            <h3 style="margin-bottom: 8px;">骄傲月特辑</h3>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 16px;">探讨多元文化，分享骄傲时刻，赢取社区勋章。</p>
+                            <button class="btn btn-outline" style="width: 100%; font-size: 12px;">进入专题</button>
+                        </div>
+                        <div class="card" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: 12px;">🧘‍♂️</div>
+                            <h3 style="margin-bottom: 8px;">健康生活指南</h3>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 16px;">健身、饮食与心理健康，打造更健康的自己。</p>
+                            <button class="btn btn-outline" style="width: 100%; font-size: 12px;">开始阅读</button>
+                        </div>
+                        <div class="card" style="padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: 12px;">💼</div>
+                            <h3 style="margin-bottom: 8px;">职场互助</h3>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 16px;">职场经验交流，打破隐形壁垒，共同成长。</p>
+                            <button class="btn btn-outline" style="width: 100%; font-size: 12px;">加入讨论</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                
+                <!-- Hot Topics -->
+                <div class="sidebar-title">🔥 热门话题</div>
+                <ul class="hot-list">
+                    <li><a href="#"><span class="rank">1</span># 我的出柜经历分享</a></li>
+                    <li><a href="#"><span class="rank">2</span># 30岁以后的生活规划</a></li>
+                    <li><a href="#"><span class="rank">3</span># 适合周末的城市徒步路线</a></li>
+                    <li><a href="#"><span class="rank">4</span># 如何在互联网上保护隐私</a></li>
+                    <li><a href="#"><span class="rank">5</span># 独居生活的安全建议</a></li>
+                    <li><a href="#"><span class="rank">6</span># 影视剧中感人的GL/BL情节</a></li>
+                </ul>
+
+                <!-- Community Stats -->
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <div class="sidebar-title">📊 社区数据</div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px;">
+                        <span style="color: #666;">注册用户</span>
+                        <span style="font-weight: bold;">45,281</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px;">
+                        <span style="color: #666;">今日发帖</span>
+                        <span style="font-weight: bold;">892</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                        <span style="color: #666;">在线人数</span>
+                        <span style="font-weight: bold; color: var(--primary-color);">312</span>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div style="margin-top: 24px; background: #eee; height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+                    广告位 / 合作推广
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于搜同社区</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">社区公约</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">账号注册</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">LGBTQ+ 资讯网</a></li>
+                        <li><a href="#">多元文化基金会</a></li>
+                        <li><a href="#">心理健康在线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博话题</a></li>
+                        <li><a href="#">QQ群组</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 搜同社区 版权所有 | 本社区仅供交流使用，请遵守当地法律法规
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
