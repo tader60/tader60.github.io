@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聪明人的故事-启迪智慧与思维突破的精选案例集</title>
+    <meta name="description" content="汇集全球聪明人的真实故事与智慧案例，涵盖商业策略、科学突破、历史传奇与人生哲学。通过深度剖析成功者的思维方式，为读者提供可借鉴的经验与思维工具。">
+    <meta name="keywords" content="聪明人的故事, 智慧故事, 思维方式, 成功案例, 人物传记, 智商故事">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Content Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 0.8rem;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            color: var(--primary-color);
+        }
+
+        .ranking-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f9f9f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .ranking-number {
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .ranking-list li:nth-child(1) .ranking-number { background: #e74c3c; }
+        .ranking-list li:nth-child(2) .ranking-number { background: #f39c12; }
+        .ranking-list li:nth-child(3) .ranking-number { background: #27ae60; }
+
+        .ranking-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .ranking-content p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .quote-box {
+            background: #f0f4f8;
+            padding: 1rem;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: "“";
+            font-size: 3rem;
+            color: #ddd;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background-color: white;
+            margin: 2rem auto;
+            max-width: var(--container-width);
+            padding: 2rem 1.5rem;
+        }
+
+        .feature-row {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-img {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #34495e;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: var(--container-width);
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-row, .feature-row:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .feature-img {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <span>✦</span> 智慧故事集
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">商业智慧</a></li>
+                    <li><a href="#">科学探索</a></li>
+                    <li><a href="#">历史传奇</a></li>
+                    <li><a href="#">思维训练</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">🔍 搜索</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>聪明人的故事：<br>揭示思维背后的逻辑与突破</h1>
+            <p>每一个伟大的成就背后，都有一段不为人知的思维历程。在这里，我们剖析成功者的决策路径，探索智慧在关键时刻的爆发。</p>
+            <div class="hero-tags">
+                <span class="tag">思维模型</span>
+                <span class="tag">逆向思维</span>
+                <span class="tag">第一性原理</span>
+                <span class="tag">认知突围</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main>
+            <section class="featured-section">
+                <div class="section-header">
+                    <h2 class="section-title">深度解读</h2>
+                    <a href="#" style="color: var(--accent-color); font-size: 0.9rem;">查看更多 →</a>
+                </div>
+
+                <article class="feature-row">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/mindset/600/400" alt="思维模型">
+                    </div>
+                    <div class="feature-text">
+                        <h3>第一性原理：埃隆·马斯克的颠覆性思维</h3>
+                        <p>马斯克并非生来就是天才，他通过“第一性原理”思考法，将复杂的问题拆解为最基本的物理事实，从而在航天和电动车领域实现了传统思维无法企及的成本降低和效率提升。本文将深入解析这一思维工具如何应用于日常生活与职业规划。</p>
+                        <a href="#" class="btn">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/strategy/600/400" alt="逆向思维">
+                    </div>
+                    <div class="feature-text">
+                        <h3>逆向思维：查理·芒格的投资哲学</h3>
+                        <p>“反过来想，总是反过来想。”查理·芒格的智慧在于他从不试图寻找成功的秘诀，而是致力于列出失败的原因并避免它们。这种反向思考的方式，帮助他在动荡的市场中保持了长期的稳健收益。</p>
+                        <a href="#" class="btn">阅读全文</a>
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">精选故事</h2>
+                </div>
+                <div class="story-grid">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/story1/400/250" alt="故事封面">
+                            <span class="card-badge">商业</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">商业案例</div>
+                            <h3 class="card-title">绝处逢生：乔布斯重返苹果的三年</h3>
+                            <p class="card-excerpt">被自己创立的公司驱逐后，乔布斯并没有沉沦，而是收购皮克斯，随后带着全新的战略回归，完成了苹果的涅槃重生。</p>
+                            <div class="card-footer">
+                                <span>阅读 12.5k</span>
+                                <span>2023-10-24</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/story2/400/250" alt="故事封面">
+                            <span class="card-badge">科学</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">科学探索</div>
+                            <h3 class="card-title">居里夫人：在实验室的幽暗中寻找光芒</h3>
+                            <p class="card-excerpt">面对质疑与贫穷，居里夫人凭借惊人的毅力发现了钋和镭。她的故事不仅是科学的胜利，更是人格力量的极致体现。</p>
+                            <div class="card-footer">
+                                <span>阅读 8.2k</span>
+                                <span>2023-10-22</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/story3/400/250" alt="故事封面">
+                            <span class="card-badge">历史</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">历史传奇</div>
+                            <h3 class="card-title">苏格拉底的“产婆术”与思想启蒙</h3>
+                            <p class="card-excerpt">通过不断的追问和反问，苏格拉底帮助雅典人走出蒙昧。这种对话式的智慧，至今仍是教育领域的宝贵财富。</p>
+                            <div class="card-footer">
+                                <span>阅读 6.1k</span>
+                                <span>2023-10-20</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/story4/400/250" alt="故事封面">
+                            <span class="card-badge">创新</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">创新思维</div>
+                            <h3 class="card-title">3M便利贴的诞生：意外的成功</h3>
+                            <p class="card-excerpt">原本是失败实验品的胶水，经过反复测试，最终演变成了改变世界的便利贴。这个故事告诉我们，失败往往是创新的副产品。</p>
+                            <div class="card-footer">
+                                <span>阅读 9.3k</span>
+                                <span>2023-10-18</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="widget">
+                <h3 class="widget-title">热门榜单</h3>
+                <ul class="ranking-list">
+                    <li>
+                        <div class="ranking-number">1</div>
+                        <div class="ranking-content">
+                            <h4>富兰克林自传：美德修养指南</h4>
+                            <p>如何通过13条原则完善自我？</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-number">2</div>
+                        <div class="ranking-content">
+                            <h4>曾国藩的笨拙智慧</h4>
+                            <p>以拙胜巧的处世哲学解析</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-number">3</div>
+                        <div class="ranking-content">
+                            <h4>亚马逊的飞轮效应</h4>
+                            <p>贝佐斯的长期主义思考</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-number">4</div>
+                        <div class="ranking-content">
+                            <h4>达·芬奇的手稿秘密</h4>
+                            <p>跨界天才的通才思维</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ranking-number">5</div>
+                        <div class="ranking-content">
+                            <h4>罗振宇的时间管理术</h4>
+                            <p>碎片化时代的知识体系构建</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">智慧箴言</h3>
+                <div class="quote-box">
+                    “聪明是一种天赋，而善良是一种选择。”<br>
+                    <span style="font-size: 0.8rem; margin-top: 0.5rem; display: block;">—— 《黑镜》</span>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">思维工具箱</h3>
+                <ul style="font-size: 0.9rem; color: var(--text-secondary);">
+                    <li style="margin-bottom: 0.5rem;">✓ 5W2H分析法</li>
+                    <li style="margin-bottom: 0.5rem;">✓ SWOT分析模型</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 费曼学习法</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 金字塔原理</li>
+                    <li style="margin-bottom: 0.5rem;">✓ 第一性原理</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header" style="justify-content: center;">
+            <h2 class="section-title" style="border: none; padding: 0;">常见问题解答</h2>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>什么样的人可以被定义为“聪明人”？</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                聪明不仅仅指高智商或快速学习的能力。在故事和案例中，我们更倾向于关注那些具备元认知能力、能够自我反思、拥有成长型思维，以及在复杂环境中做出理性决策的人。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>这些故事对普通人有什么实际帮助？</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                通过阅读聪明人的故事，你可以学习他们的决策模型、应对挫折的心态以及解决问题的路径。这些案例可以作为你人生决策的参考坐标，帮助你少走弯路。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>如何培养像他们一样的思维方式？</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                关键在于刻意练习。你可以尝试使用“第一性原理”分析日常琐事，或者运用“逆向思维”来审视自己的错误。持续阅读传记和深度思考是提升思维深度的有效途径。
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于智慧故事集</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    致力于挖掘并传播那些能够启迪心智、改变命运的真实案例与智慧思想。我们相信，每一个故事都是通往智慧的一扇窗。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#">商业领袖</a></li>
+                    <li><a href="#">科学巨匠</a></li>
+                    <li><a href="#">历史智者</a></li>
+                    <li><a href="#">思维方法</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">网站地图</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 智慧故事集. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Interaction
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
